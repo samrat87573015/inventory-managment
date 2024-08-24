@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply mx-auto px-4;
+}
+.loder{
+    @apply fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-white bg-opacity-50;
+    z-index: 9999;
+}
+.proggerBar {
+    height: 0.25rem;
+    width: 40%;
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: loader 1.5s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.form_group input{
+    @apply w-full border rounded py-2 px-3 mt-2 mb-5;
+}
+.btn_primary{
+    @apply bg-indigo-500 text-white hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 transition-all;
+}
+.catDeleteBtn{
+    @apply bg-red-500 text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 transition-all;
+}
+tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+/* input[type=number] {
+    -moz-appearance: textfield;
+} */
+
+/* input[type=number]#discount{
+    -webkit-appearance: textfield;
+} */
+
+@keyframes loader {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+.profile_details input{
+    @apply w-full border rounded py-2 px-3 mt-2 bg-indigo-100;
+}
+.invoiceProduct_removeBtn{
+    @apply bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded-md text-[12px];
+}
+tbody#invoiceProductList tr td {
+    font-size: 14px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+thead.invoiceProductTable.border-b-1.border-gray-300 tr th {
+    font-size: 14px;
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+}
+tbody#DinvoiceProductList td {
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+}
+
+.deleteBtn{
+    @apply text-red-500 text-xl;
+}
+.editBtn{
+    @apply text-indigo-500 text-xl;
+}
