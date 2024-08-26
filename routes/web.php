@@ -10,11 +10,11 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\HomeController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[HomeController::class, 'index'])->name('home');
 
 
 Route::post('/userRegistration', [UserController::class, 'userRegistration'])->name('userRegistration');
@@ -115,6 +115,7 @@ Route::get('/invoice', [InvoiceController::class, 'invoicePage'])->name('invoice
 Route::get('/sale-report', [ReportController::class, 'saleReport'])->name('saleReport')->middleware([TokanVarifictionMiddleware::class]);
 
 Route::get('/ganaratSale/{fromDate}/{toDate}', [ReportController::class, 'ganaratSaleReport'])->name('ganaratSaleReport')->middleware([TokanVarifictionMiddleware::class]);
+
 
 
 
